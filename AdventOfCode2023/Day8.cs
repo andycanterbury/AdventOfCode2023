@@ -70,7 +70,7 @@ namespace AdventOfCode2023
                 }
             }
 
-            var stepList = new List<int>();
+            var stepList = new List<long>();
             for(int i = 0; i < current.Count; i++)
             {
                 var steps = 0;

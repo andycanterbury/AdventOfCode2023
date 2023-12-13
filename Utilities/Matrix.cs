@@ -97,6 +97,41 @@
             return neighbors;
         }
 
+        public MatrixLocation<T> GetNeighborAbove(int row, int col)
+        {
+            if (row > 0)
+            {
+                return new MatrixLocation<T> { Value = _matrix[row - 1, col], Row = row - 1, Column = col };
+            }
+            return new MatrixLocation<T>();
+        }
+
+        public MatrixLocation<T> GetNeighborBelow(int row, int col)
+        {
+            if (row < _matrix.GetLength(0) - 1)
+            {
+                return new MatrixLocation<T> { Value = _matrix[row + 1, col], Row = row + 1, Column = col };
+            }
+            return new MatrixLocation<T>();
+        }
+
+        public MatrixLocation<T> GetNeighborLeft(int row, int col)
+        {
+            if (col > 0)
+            {
+                return new MatrixLocation<T> { Value = _matrix[row, col - 1], Row = row, Column = col - 1 };
+            }
+            return new MatrixLocation<T>();
+        }
+        public MatrixLocation<T> GetNeighborRight(int row, int col)
+        {
+            if (col < _matrix.GetLength(1) - 1)
+            {
+                return new MatrixLocation<T> { Value = _matrix[row, col + 1], Row = row, Column = col + 1 };
+            }
+            return new MatrixLocation<T>();
+        }
+
     }
 
     public class MatrixLocation<T>
